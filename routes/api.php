@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-use Aloha\Twilio\Twilio;
+use App\Modules\Twilio;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/', function()
+Route::get('/hey', function()
 {
     $twilio = new Twilio(getenv('TWILIO_SID'), getenv('TWILIO_TOKEN'), "+19526871475");
     $twilio->message('+19526871475', 'Pink Elephants and Happy Rainbows');
