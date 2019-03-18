@@ -12,12 +12,12 @@ $auth_token = $_ENV['TWILIO_TOKEN'];
 // A Twilio number you own with SMS capabilities
 $twilio_number = "+17639511381";
 
-$client = new Client($account_sid, $auth_token);
-$client->messages->create(
-    // Where to send a text message (your cell phone?)
-    '+19526871475',
-    array(
-        'from' => $twilio_number,
-        'body' => 'I sent this message in under 10 minutes! Wowsers!'
-    )
-);
+// $client = new Client($account_sid, $auth_token);
+// $client->messages->create(
+//     // Where to send a text message (your cell phone?)
+//     '+19526871475',
+//     array(
+//         'from' => $twilio_number,
+//         'body' => 'I sent this message in under 10 minutes! Wowsers!'
+//     )
+// );

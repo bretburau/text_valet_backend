@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-use App\Modules\Twilio;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,8 +16,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/hey', function()
-{
-    $twilio = new Twilio(getenv('TWILIO_SID'), getenv('TWILIO_TOKEN'), "+19526871475");
-    $twilio->message('+19526871475', 'Pink Elephants and Happy Rainbows');
-});
+Route::get('/hey', 'Text@send');
+    // $twilio = new Twilio();
+    // $twilio->message('+19526871475', 'Pink Elephants and Happy Rainbows');
+
+Route::post('/hey', 'Text@send');
