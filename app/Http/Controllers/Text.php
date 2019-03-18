@@ -20,10 +20,10 @@ class Text extends Controller
         $client = new Client($account_sid, $auth_token);
         $client->messages->create(
             // Where to send a text message (your cell phone?)
-            '+19526871475',
+            $request['number'],
             array(
                 'from' => $twilio_number,
-                'body' => 'I sent this message in under 10 minutes! Wowsers!'
+                'body' => $request['body']
             )
         );
         return $request->all();
